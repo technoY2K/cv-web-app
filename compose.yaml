@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  nuxt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/nuxt3
+      - nuxt_node_modules:/nuxt3/node_modules
+    ports:
+      - 3000:3000
+      - 24678:24678
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+
+volumes:
+  nuxt_node_modules:
