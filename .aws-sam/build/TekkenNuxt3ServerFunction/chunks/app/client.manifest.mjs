@@ -1,4 +1,9 @@
 const client_manifest = {
+  "__plugin-vue_export-helper.c27b6911.js": {
+    "resourceType": "script",
+    "module": true,
+    "file": "_plugin-vue_export-helper.c27b6911.js"
+  },
   "node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
     "resourceType": "style",
     "file": "error-404.23f2309d.css",
@@ -8,9 +13,10 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-404.7e41f204.js",
+    "file": "error-404.6351b33f.js",
     "imports": [
-      "node_modules/nuxt/dist/app/entry.js"
+      "node_modules/nuxt/dist/app/entry.js",
+      "__plugin-vue_export-helper.c27b6911.js"
     ],
     "isDynamicEntry": true,
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue"
@@ -28,9 +34,10 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-500.853da659.js",
+    "file": "error-500.11b69e03.js",
     "imports": [
-      "node_modules/nuxt/dist/app/entry.js"
+      "node_modules/nuxt/dist/app/entry.js",
+      "__plugin-vue_export-helper.c27b6911.js"
     ],
     "isDynamicEntry": true,
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
@@ -39,27 +46,15 @@ const client_manifest = {
     "file": "error-500.aa16ed4d.css",
     "resourceType": "style"
   },
-  "node_modules/nuxt/dist/app/entry.css": {
-    "resourceType": "style",
-    "file": "entry.dd64dcb9.css",
-    "src": "node_modules/nuxt/dist/app/entry.css"
-  },
   "node_modules/nuxt/dist/app/entry.js": {
     "resourceType": "script",
     "module": true,
-    "css": [
-      "entry.dd64dcb9.css"
-    ],
     "dynamicImports": [
       "virtual:nuxt:/Users/kevia.cloud/X-Files/tekken/.nuxt/error-component.mjs"
     ],
-    "file": "entry.2a93a9c4.js",
+    "file": "entry.dbbbdddb.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js"
-  },
-  "entry.dd64dcb9.css": {
-    "file": "entry.dd64dcb9.css",
-    "resourceType": "style"
   },
   "virtual:nuxt:/Users/kevia.cloud/X-Files/tekken/.nuxt/error-component.mjs": {
     "resourceType": "script",
@@ -68,7 +63,7 @@ const client_manifest = {
       "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "error-component.4f004b42.js",
+    "file": "error-component.375549d1.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],

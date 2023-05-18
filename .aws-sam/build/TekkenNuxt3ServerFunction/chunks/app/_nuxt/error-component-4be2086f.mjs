@@ -23,8 +23,8 @@ const _sfc_main = {
     const statusMessage = (_a = error.statusMessage) != null ? _a : is404 ? "Page Not Found" : "Internal Server Error";
     const description = error.message || error.toString();
     const stack = void 0;
-    const _Error404 = /* @__PURE__ */ defineAsyncComponent(() => import('./error-404-14f4293c.mjs').then((r) => r.default || r));
-    const _Error = /* @__PURE__ */ defineAsyncComponent(() => import('./error-500-271eadab.mjs').then((r) => r.default || r));
+    const _Error404 = /* @__PURE__ */ defineAsyncComponent(() => import('./error-404-c376ce3d.mjs').then((r) => r.default || r));
+    const _Error = /* @__PURE__ */ defineAsyncComponent(() => import('./error-500-cc7e8d6f.mjs').then((r) => r.default || r));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ statusCode: unref(statusCode), statusMessage: unref(statusMessage), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
@@ -40,4 +40,4 @@ _sfc_main.setup = (props, ctx) => {
 const _sfc_main$1 = _sfc_main;
 
 export { _sfc_main$1 as default };
-//# sourceMappingURL=error-component-e98e9a1d.mjs.map
+//# sourceMappingURL=error-component-4be2086f.mjs.map
