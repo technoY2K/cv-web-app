@@ -6,4 +6,5 @@ export default defineNuxtConfig({
     app: {
         cdnURL: "https://d302kctrc8u730.cloudfront.net",
     },
+    modules: ["@nuxtjs/tailwindcss"],
 });
