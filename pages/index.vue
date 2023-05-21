@@ -1,8 +1,12 @@
 <template>
-    <div>
-        <h1>Counter</h1>
-        <p>{{ counter }}</p>
-        <button @click="increment">Click Me</button>
+    <div class="card bg-base-100 w-96 p-6 shadow-xl">
+        <section class="card-body">
+            <h2 class="card-title">Counter</h2>
+            <p>{{ counter }}</p>
+        </section>
+        <section class="card-actions justify-end">
+            <button class="btn btn-primary" @click="increment">Click Me</button>
+        </section>
     </div>
 </template>
 

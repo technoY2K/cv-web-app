@@ -6,5 +6,10 @@ export default defineNuxtConfig({
     app: {
         cdnURL: "https://d302kctrc8u730.cloudfront.net",
     },
-    modules: ["@nuxtjs/tailwindcss"],
+    modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
+    googleFonts: {
+        families: {
+            Roboto: true,
+        },
+    },
 });
