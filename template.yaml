@@ -12,6 +12,10 @@ Globals:
         MemorySize: 128
 
 Resources:
+    NuxtGatewayApi:
+        Type: AWS::Serverless::Api
+        Properties:
+            StageName: "v1"
     TekkenNuxt3ServerFunction:
         Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Properties:
@@ -27,6 +31,8 @@ Resources:
                     Properties:
                         Path: /
                         Method: get
+                        RestApiId:
+                            Ref: NuxtGatewayApi
 
 Outputs:
     # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
@@ -34,7 +40,7 @@ Outputs:
     # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
     TekkenNuxt3ServerApi:
         Description: "Endpoint to Nuxt 3 server"
-        Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+        Value: !Sub "https://${NuxtGatewayApi}.execute-api.${AWS::Region}.amazonaws.com/"
     TekkenNuxt3ServerFunction:
         Description: "Tekken Nuxt Server ARN"
         Value: !GetAtt TekkenNuxt3ServerFunction.Arn
