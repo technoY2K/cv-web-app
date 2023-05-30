@@ -1,5 +1,5 @@
 {
-    "name": "tekken",
+    "name": "nuxt-base-station",
     "private": true,
     "scripts": {
         "build": "nuxt build",
