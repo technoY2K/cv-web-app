@@ -19,6 +19,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ["Libre Franklin", ...defaultTheme.fontFamily.sans],
+                serif: ["Libre Baskerville", ...defaultTheme.fontFamily.serif],
             },
         },
     },
