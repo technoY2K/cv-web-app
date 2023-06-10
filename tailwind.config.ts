@@ -15,6 +15,25 @@ module.exports = {
             });
         }),
     ],
+    daisyui: {
+        themes: [
+            {
+                custom: {
+                    primary: "#ca1f40",
+                    "primary-content": "#ffffff",
+                    secondary: "#222d66",
+                    "secondary-content": "#ffffff",
+                    accent: "#ffd700",
+                    neutral: "#2b3440",
+                    "base-100": "#ffffff",
+                    info: "#3abff8",
+                    success: "#36d399",
+                    warning: "#ff5f15",
+                    error: "#f87272",
+                },
+            },
+        ],
+    },
     theme: {
         extend: {
             fontFamily: {
