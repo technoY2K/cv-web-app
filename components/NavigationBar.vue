@@ -30,8 +30,10 @@
                     </NuxtLink>
                 </li>
             </ul>
-
-            <button class="btn-secondary btn lg:hidden">
+            <button
+                class="btn-secondary btn"
+                @click="showSideBar = !showSideBar"
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -48,6 +50,10 @@
             </button>
         </div>
     </nav>
+    <SideBar
+        :show="showSideBar"
+        @update:show="(show) => (showSideBar = show)"
+    />
 </template>
 
 <script lang="ts" setup>
@@ -65,4 +71,6 @@
             path: "/founding-fathers",
         },
     ];
+
+    const showSideBar = ref<boolean>(false);
 </script>
