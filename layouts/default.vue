@@ -1,6 +1,6 @@
 <template>
     <main class="container mx-auto">
-        <MainNavigation />
+        <NavigationBar />
         <slot />
     </main>
 </template>
