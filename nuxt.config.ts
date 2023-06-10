@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     googleFonts: {
         families: {
-            Roboto: true,
+            "Libre+Franklin": true,
         },
     },
     modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
