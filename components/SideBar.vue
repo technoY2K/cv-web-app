@@ -1,5 +1,10 @@
 <template>
-    <aside v-show="props.show" class="sidebar">
+    <nav
+        v-show="props.show"
+        id="sidebar"
+        aria-label="Sidebar navigation"
+        role="navigation"
+    >
         <div
             id="sidebar-backdrop"
             class="fixed left-0 top-0 z-[900] h-screen w-screen bg-neutral opacity-25"
@@ -15,11 +20,11 @@
             >
                 Close
             </button>
-            <div class="mt-16">
+            <div class="mt-8">
                 <slot />
             </div>
         </div>
-    </aside>
+    </nav>
 </template>
 
 <script lang="ts" setup>

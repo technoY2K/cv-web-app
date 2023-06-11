@@ -1,6 +1,6 @@
 <template>
     <nav
-        aria-label="Main Navigation"
+        aria-label="Main navigation bar"
         class="navbar h-[64px] w-full justify-between"
         role="navigation"
     >
@@ -31,6 +31,9 @@
                 </li>
             </ul>
             <button
+                :aria-expanded="showSideBar ? 'true' : 'false'"
+                aria-label="Open sidebar"
+                aria-controls="sidebar"
                 class="btn-secondary btn lg:hidden"
                 @click="showSideBar = !showSideBar"
             >
@@ -51,8 +54,11 @@
         </div>
     </nav>
     <SideBar :show="showSideBar" @update:show="(show) => (showSideBar = show)">
-        <ul class="flex flex-col gap-y-4">
-            <li class="underline decoration-accent hover:cursor-pointer">
+        <ul class="flex flex-col gap-y-4" role="menu">
+            <li
+                class="underline decoration-accent hover:cursor-pointer"
+                role="menuitem"
+            >
                 <NuxtLink to="/" class="text-lg normal-case" aria-label="home">
                     Home
                 </NuxtLink>
@@ -61,6 +67,7 @@
                 v-for="(item, index) in navItems"
                 :key="index"
                 class="underline decoration-accent hover:cursor-pointer"
+                role="menuitem"
             >
                 <NuxtLink
                     :to="item.path"
