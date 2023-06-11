@@ -5,7 +5,7 @@
         role="navigation"
     >
         <div>
-            <NuxtLink class="hover:cursor-pointer">
+            <NuxtLink class="hover:cursor-pointer" to="/">
                 <NuxtImg
                     src="/images/usa-map.png"
                     format="webp"
@@ -31,7 +31,7 @@
                 </li>
             </ul>
             <button
-                class="btn-secondary btn"
+                class="btn-secondary btn lg:hidden"
                 @click="showSideBar = !showSideBar"
             >
                 <svg
@@ -50,10 +50,28 @@
             </button>
         </div>
     </nav>
-    <SideBar
-        :show="showSideBar"
-        @update:show="(show) => (showSideBar = show)"
-    />
+    <SideBar :show="showSideBar" @update:show="(show) => (showSideBar = show)">
+        <ul class="flex flex-col gap-y-4">
+            <li class="underline decoration-accent hover:cursor-pointer">
+                <NuxtLink to="/" class="text-lg normal-case" aria-label="home">
+                    Home
+                </NuxtLink>
+            </li>
+            <li
+                v-for="(item, index) in navItems"
+                :key="index"
+                class="underline decoration-accent hover:cursor-pointer"
+            >
+                <NuxtLink
+                    :to="item.path"
+                    class="text-lg normal-case"
+                    :aria-label="item.name"
+                >
+                    {{ item.name }}
+                </NuxtLink>
+            </li>
+        </ul></SideBar
+    >
 </template>
 
 <script lang="ts" setup>
