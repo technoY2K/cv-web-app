@@ -36,13 +36,16 @@
         emit("update:show", false);
     });
 
-    watch(props, () => {
-        if (props.show) {
-            setTimeout(() => {
-                slide.value = true;
-            }, 100);
-        } else {
-            slide.value = false;
+    watch(
+        () => props.show,
+        (value) => {
+            if (value) {
+                setTimeout(() => {
+                    slide.value = true;
+                }, 100);
+            } else {
+                slide.value = false;
+            }
         }
-    });
+    );
 </script>
