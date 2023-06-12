@@ -1,7 +1,7 @@
 <template>
     <nav
         aria-label="Main navigation bar"
-        class="navbar h-[64px] w-full justify-between"
+        class="navbar mb-8 h-[64px] w-full justify-between"
         role="navigation"
     >
         <div>
@@ -34,7 +34,7 @@
                 :aria-expanded="showSideBar ? 'true' : 'false'"
                 aria-label="Open sidebar"
                 aria-controls="sidebar"
-                class="btn-secondary btn lg:hidden"
+                class="btn-primary btn lg:hidden"
                 @click="showSideBar = !showSideBar"
             >
                 <svg

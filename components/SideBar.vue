@@ -14,10 +14,7 @@
             class="fixed right-0 top-0 z-[901] h-screen w-3/4 bg-base-100 p-4 transition-transform duration-300 ease-in-out"
             :class="slide ? 'translate-x-0' : 'translate-x-full'"
         >
-            <button
-                class="btn-secondary btn"
-                @click="emit('update:show', false)"
-            >
+            <button class="btn-primary btn" @click="emit('update:show', false)">
                 Close
             </button>
             <div class="mt-8">
