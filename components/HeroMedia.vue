@@ -5,7 +5,7 @@
     >
         <video
             class="absolute left-0 top-0 z-[100] min-h-full w-auto min-w-full object-cover"
-            src="~/assets/us_capital_B_role.mp4"
+            :src="props.mediaUrl"
             muted
             autoplay
             loop
@@ -43,5 +43,5 @@
 </template>
 
 <script lang="ts" setup>
-    const props = defineProps<{ id: string }>();
+    const props = defineProps<{ id: string; mediaUrl: string }>();
 </script>

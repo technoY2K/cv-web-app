@@ -24,6 +24,7 @@
         "typescript": "^5.0.4"
     },
     "dependencies": {
+        "contentful": "^10.2.4",
         "daisyui": "^2.51.6",
         "node-fetch-native": "^1.1.1"
     }
