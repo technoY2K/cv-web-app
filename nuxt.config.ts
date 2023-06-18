@@ -7,4 +7,10 @@ export default defineNuxtConfig({
             "Libre+Baskerville": true,
         },
     },
+    image: {
+        domains: ["images.ctfassets.net"],
+        contentful: {
+            baseURL: "https://images.ctfassets.net/",
+        },
+    },
 });

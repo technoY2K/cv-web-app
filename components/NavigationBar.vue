@@ -7,7 +7,8 @@
         <div>
             <NuxtLink class="hover:cursor-pointer" to="/">
                 <NuxtImg
-                    src="/images/usa-map.png"
+                    provider="contentful"
+                    :src="data?.items[0].fields.logo.fields.file.url"
                     format="webp"
                     width="64"
                     height="64"
@@ -82,6 +83,14 @@
 </template>
 
 <script lang="ts" setup>
+    const { $contentful } = useNuxtApp();
+    const { data } = await useAsyncData("navigation", () =>
+        $contentful.getEntries({
+            content_type: "navigation",
+            "fields.name": "Mercury",
+        })
+    );
+
     const navItems = [
         {
             name: "About",
