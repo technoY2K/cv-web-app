@@ -1,14 +1,22 @@
 import * as contentful from "contentful";
 
-export default defineNuxtPlugin((nuxtAPP) => {
-    const client = contentful.createClient({
-        space: String(process.env.CTF_SPACE_ID),
-        accessToken: String(process.env.CTF_PUBLISHED),
-    });
+export default defineNuxtPlugin(() => {
+    const runtimeConfig = useRuntimeConfig();
+    const config =
+        process.env.NODE_ENV === "development"
+            ? {
+                  space: runtimeConfig.public.CTF_SPACE_ID,
+                  accessToken: runtimeConfig.public.CTF_PREVIEW,
+                  host: "preview.contentful.com",
+              }
+            : {
+                  space: runtimeConfig.public.CTF_SPACE_ID,
+                  accessToken: runtimeConfig.public.CTF_PUBLISHED,
+              };
 
     return {
         provide: {
-            contentful: client,
+            contentful: contentful.createClient(config),
         },
     };
 });

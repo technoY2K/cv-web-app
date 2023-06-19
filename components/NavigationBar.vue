@@ -4,30 +4,30 @@
         class="navbar mb-8 h-[64px] w-full justify-between"
         role="navigation"
     >
-        <div>
+        <div v-if="data">
             <NuxtLink class="hover:cursor-pointer" to="/">
                 <NuxtImg
                     provider="contentful"
-                    :src="data?.items[0].fields.logo.fields.file.url"
+                    :src="data.logo"
                     format="webp"
                     width="64"
                     height="64"
                 />
             </NuxtLink>
         </div>
-        <div>
+        <div v-if="data">
             <ul class="hidden space-x-4 lg:flex lg:flex-row lg:justify-between">
                 <li
-                    v-for="(item, index) in navItems"
+                    v-for="(link, index) in data.links"
                     :key="index"
                     class="underline decoration-accent hover:cursor-pointer"
                 >
                     <NuxtLink
-                        :to="item.path"
-                        class="text-lg normal-case"
-                        :aria-label="item.name"
+                        :to="link.url"
+                        class="text-lg capitalize"
+                        :aria-label="link.label"
                     >
-                        {{ item.name }}
+                        {{ link.label }}
                     </NuxtLink>
                 </li>
             </ul>
@@ -55,7 +55,7 @@
         </div>
     </nav>
     <SideBar :show="showSideBar" @update:show="(show) => (showSideBar = show)">
-        <ul class="flex flex-col gap-y-4" role="menu">
+        <ul v-if="data" class="flex flex-col gap-y-4" role="menu">
             <li
                 class="underline decoration-accent hover:cursor-pointer"
                 role="menuitem"
@@ -65,17 +65,17 @@
                 </NuxtLink>
             </li>
             <li
-                v-for="(item, index) in navItems"
+                v-for="(link, index) in data.links"
                 :key="index"
                 class="underline decoration-accent hover:cursor-pointer"
                 role="menuitem"
             >
                 <NuxtLink
-                    :to="item.path"
-                    class="text-lg normal-case"
-                    :aria-label="item.name"
+                    :to="link.url"
+                    class="text-lg capitalize"
+                    :aria-label="link.label"
                 >
-                    {{ item.name }}
+                    {{ link.label }}
                 </NuxtLink>
             </li>
         </ul></SideBar
@@ -84,27 +84,35 @@
 
 <script lang="ts" setup>
     const { $contentful } = useNuxtApp();
-    const { data } = await useAsyncData("navigation", () =>
-        $contentful.getEntries({
-            content_type: "navigation",
-            "fields.name": "Mercury",
-        })
-    );
+    const { data } = await useAsyncData(
+        "navigation",
+        () =>
+            $contentful.getEntries({
+                content_type: "navigation",
+                "fields.name": "Mercury",
+            }),
+        {
+            transform: (data) => {
+                const temp: {
+                    logo: string;
+                    links: { label: string; url: string }[];
+                } = {
+                    logo: "",
+                    links: [],
+                };
 
-    const navItems = [
-        {
-            name: "About",
-            path: "/about",
-        },
-        {
-            name: "Constitution",
-            path: "/constitution",
-        },
-        {
-            name: "Founding Fathers",
-            path: "/founding-fathers",
-        },
-    ];
+                if (data?.items[0]) {
+                    temp.logo = data?.items[0].fields.logo.fields.file.url;
+                }
+
+                if (data?.items[0]) {
+                    temp.links = data?.items[0].fields.links.fields.data;
+                }
+
+                return temp;
+            },
+        }
+    );
 
     const showSideBar = ref<boolean>(false);
 </script>
