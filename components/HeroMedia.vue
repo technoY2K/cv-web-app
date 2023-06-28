@@ -17,23 +17,23 @@
         ></div>
         <div
             id="hero-content"
-            class="absolute left-0 top-0 z-[120] h-full w-full"
+            class="absolute left-0 top-20 z-[120] h-full w-full"
         >
             <div class="relative h-full w-full">
                 <div
-                    class="flex h-full w-full flex-col justify-center p-8 font-serif text-white lg:w-1/2"
+                    class="flex h-full w-full flex-col justify-center p-8 font-['Audiowide'] font-light text-white"
                 >
                     <div>
-                        <p class="text-xl sm:text-2xl md:text-3xl">
-                            Learn the Constitution
+                        <p class="text-xl sm:text-xl md:text-3xl">
+                            Real estate research
                         </p>
-                        <p class="text-xl sm:text-2xl md:text-3xl">
+                        <p class="text-xl sm:text-xl md:text-3xl">
                             with the help of AI
                         </p>
                     </div>
                     <div class="mt-8">
-                        <button class="btn-primary btn w-[200px]">
-                            Explore
+                        <button class="btn-primary btn w-[200px] font-sans">
+                            Get Started
                         </button>
                     </div>
                 </div>

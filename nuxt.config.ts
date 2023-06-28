@@ -10,8 +10,8 @@ export default defineNuxtConfig({
     modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "@nuxt/image"],
     googleFonts: {
         families: {
-            "Libre+Franklin": true,
-            "Libre+Baskerville": true,
+            Raleway: true,
+            Audiowide: true,
         },
     },
     image: {
