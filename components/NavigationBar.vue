@@ -2,7 +2,7 @@
     <nav
         aria-label="Main navigation bar"
         class="navbar z-[900] mb-8 flex h-[64px] w-full flex-row justify-between px-8"
-        :class="isHome ? 'absolute' : 'block'"
+        :class="isHome ? 'absolute text-white' : 'block text-base-content'"
         role="navigation"
     >
         <div v-if="data" id="logo">
@@ -21,7 +21,7 @@
                 <li
                     v-for="(link, index) in data.links"
                     :key="index"
-                    class="text-white hover:cursor-pointer"
+                    class="hover:cursor-pointer"
                 >
                     <NuxtLink
                         :to="link.url"
@@ -38,7 +38,7 @@
                 <li class="hover:cursor-pointer">
                     <NuxtLink
                         to="/auth"
-                        class="btn-primary btn text-lg font-bold capitalize text-white"
+                        class="btn-primary btn text-lg font-bold capitalize"
                         aria-label="Login button"
                     >
                         Login
