@@ -17,22 +17,20 @@
         ></div>
         <div
             id="hero-content"
-            class="absolute left-0 top-20 z-[120] h-full w-full"
+            class="absolute left-0 top-0 z-[120] h-full w-full"
         >
             <div class="relative h-full w-full">
                 <div
-                    class="flex h-full w-full flex-col justify-center p-8 font-['Audiowide'] font-light text-white"
+                    class="flex h-full w-full flex-col items-center justify-center p-8 font-['Montserrat'] font-light text-white"
                 >
-                    <div>
-                        <p class="text-xl sm:text-xl md:text-3xl">
-                            Real estate research
+                    <div class="container mx-auto text-center">
+                        <p class="text-3xl md:text-4xl lg:text-5xl">
+                            Real estate research with the help of AI
                         </p>
-                        <p class="text-xl sm:text-xl md:text-3xl">
-                            with the help of AI
-                        </p>
-                    </div>
-                    <div class="mt-8">
-                        <button class="btn-primary btn w-[200px] font-sans">
+
+                        <button
+                            class="btn-primary btn mt-8 w-[200px] font-sans"
+                        >
                             Get Started
                         </button>
                     </div>

@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     googleFonts: {
         families: {
             Raleway: true,
-            Audiowide: true,
+            Montserrat: true,
         },
     },
     image: {

@@ -1,7 +1,8 @@
 <template>
     <nav
         aria-label="Main navigation bar"
-        class="navbar absolute z-[900] mb-8 flex h-[64px] w-full flex-row justify-between px-8"
+        class="navbar z-[900] mb-8 flex h-[64px] w-full flex-row justify-between px-8"
+        :class="isHome ? 'absolute' : 'block'"
         role="navigation"
     >
         <div v-if="data" id="logo">
@@ -101,6 +102,8 @@
 
 <script lang="ts" setup>
     const { $contentful } = useNuxtApp();
+    const route = useRoute();
+    const isHome = computed(() => route.path === "/");
     const { data } = await useAsyncData(
         "navigation",
         () =>
