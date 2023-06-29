@@ -1,10 +1,10 @@
 <template>
     <nav
         aria-label="Main navigation bar"
-        class="navbar mb-8 h-[64px] w-full justify-between"
+        class="navbar absolute z-[900] mb-8 flex h-[64px] w-full flex-row justify-between px-8"
         role="navigation"
     >
-        <div v-if="data">
+        <div v-if="data" id="logo">
             <NuxtLink class="hover:cursor-pointer" to="/">
                 <NuxtImg
                     provider="contentful"
@@ -15,19 +15,32 @@
                 />
             </NuxtLink>
         </div>
-        <div v-if="data">
-            <ul class="hidden space-x-4 lg:flex lg:flex-row lg:justify-between">
+        <div v-if="data" id="nav-items" class="hidden lg:block">
+            <ul class="flex flex-row justify-between space-x-8">
                 <li
                     v-for="(link, index) in data.links"
                     :key="index"
-                    class="underline decoration-accent hover:cursor-pointer"
+                    class="text-white hover:cursor-pointer"
                 >
                     <NuxtLink
                         :to="link.url"
-                        class="text-lg capitalize"
+                        class="text-lg font-bold capitalize"
                         :aria-label="link.label"
                     >
                         {{ link.label }}
+                    </NuxtLink>
+                </li>
+            </ul>
+        </div>
+        <div id="nav-actions">
+            <ul class="hidden lg:block">
+                <li class="hover:cursor-pointer">
+                    <NuxtLink
+                        to="/auth"
+                        class="btn-primary btn text-lg font-bold capitalize text-white"
+                        aria-label="Login button"
+                    >
+                        Login
                     </NuxtLink>
                 </li>
             </ul>
@@ -54,7 +67,11 @@
             </button>
         </div>
     </nav>
-    <SideBar :show="showSideBar" @update:show="(show) => (showSideBar = show)">
+    <SideBar
+        class="z-[901]"
+        :show="showSideBar"
+        @update:show="(show) => (showSideBar = show)"
+    >
         <ul v-if="data" class="flex flex-col gap-y-4" role="menu">
             <li
                 class="underline decoration-accent hover:cursor-pointer"
