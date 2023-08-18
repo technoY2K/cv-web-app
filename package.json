@@ -1,5 +1,5 @@
 {
-    "name": "nuxt-base-station",
+    "name": "chronovision-web-app",
     "private": true,
     "scripts": {
         "build": "nuxt build",
