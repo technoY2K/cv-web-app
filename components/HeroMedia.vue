@@ -13,7 +13,7 @@
         />
         <div
             id="hero-overlay"
-            class="absolute left-0 top-0 z-[110] h-full w-full bg-neutral opacity-30"
+            class="absolute left-0 top-0 z-[110] h-full w-full bg-neutral opacity-40"
         ></div>
         <div
             id="hero-content"
@@ -25,7 +25,7 @@
                 >
                     <div class="container mx-auto text-center">
                         <p class="text-3xl md:text-4xl lg:text-5xl">
-                            Real estate research with the help of AI
+                            Digital Marketing Forecasting With AI Vision
                         </p>
 
                         <button

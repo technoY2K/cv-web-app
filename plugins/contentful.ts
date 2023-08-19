@@ -5,13 +5,13 @@ export default defineNuxtPlugin(() => {
     const config =
         process.env.NODE_ENV === "development"
             ? {
-                  space: runtimeConfig.public.CTF_SPACE_ID,
-                  accessToken: runtimeConfig.public.CTF_PREVIEW,
+                  space: runtimeConfig.public.CONTENTFUL_SPACE_ID,
+                  accessToken: runtimeConfig.public.CONTENTFUL_PREVIEW_TOKEN,
                   host: "preview.contentful.com",
               }
             : {
-                  space: runtimeConfig.public.CTF_SPACE_ID,
-                  accessToken: runtimeConfig.public.CTF_PUBLISHED,
+                  space: runtimeConfig.public.CONTENTFUL_SPACE_ID,
+                  accessToken: runtimeConfig.public.CONTENTFUL_PUBLISHED_TOKEN,
               };
 
     return {

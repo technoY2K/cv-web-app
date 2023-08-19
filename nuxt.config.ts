@@ -2,9 +2,9 @@
 export default defineNuxtConfig({
     runtimeConfig: {
         public: {
-            CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-            CTF_PREVIEW: process.env.CTF_PREVIEW,
-            CTF_PUBLISHED: process.env.CTF_PUBLISHED,
+            CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
+            CONTENTFUL_PREVIEW_TOKEN: process.env.CONTENTFUL_PREVIEW_TOKEN,
+            CONTENTFUL_PUBLISHED_TOKEN: process.env.CONTENTFUL_PUBLISHED_TOKEN,
         },
     },
     modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "@nuxt/image"],
