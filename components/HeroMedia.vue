@@ -21,11 +21,11 @@
         >
             <div class="relative h-full w-full">
                 <div
-                    class="flex h-full w-full flex-col items-center justify-center p-8 font-['Montserrat'] font-light text-white"
+                    class="flex h-full w-full flex-col items-center justify-center p-8 font-['Montserrat'] text-white"
                 >
                     <div class="container mx-auto text-center">
                         <p class="text-3xl md:text-4xl lg:text-5xl">
-                            Digital Marketing Forecasting With AI Vision
+                            Forecast digital marketing trends with AI Vision
                         </p>
 
                         <button

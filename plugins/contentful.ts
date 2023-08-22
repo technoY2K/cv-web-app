@@ -14,9 +14,15 @@ export default defineNuxtPlugin(() => {
                   accessToken: runtimeConfig.public.CONTENTFUL_PUBLISHED_TOKEN,
               };
 
+    // contentful.default is used because of module interop issues regarding the contentful package
+    // https://github.com/contentful/contentful.js/issues/1233
+    const client = contentful.createClient
+        ? contentful.createClient(config)
+        : contentful.default.createClient(config);
+
     return {
         provide: {
-            contentful: contentful.createClient(config),
+            contentful: client,
         },
     };
 });
