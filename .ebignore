@@ -150,6 +150,24 @@ dist
 
 # Misc
 .DS_Store
+components
+layouts
+pages
+plugins
+.dockerignore
+.eslintignore
+.eslintrc.js
+.npmrc
+.prettierignore
+.prettierrc.js
+app.vue
+compose.yaml
+Dockerfile
+nuxt.config.ts
+README.md
+tailwind.config.ts
+template.yaml
+tsconfig.json
 package.json
 package-lock.json
 !.output/server/node_modules
