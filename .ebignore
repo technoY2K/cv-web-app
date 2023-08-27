@@ -150,16 +150,4 @@ dist
 
 # Misc
 .DS_Store
-components
-layouts
-pages
-plugins
-app.vue
-README.md
-template.yaml
-.dockerignore
-compose.yaml
-Dockerfile
-package.json
-package-lock.json
 
