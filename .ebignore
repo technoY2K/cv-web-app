@@ -160,4 +160,6 @@ template.yaml
 .dockerignore
 compose.yaml
 Dockerfile
+package.json
+package-lock.json
 
