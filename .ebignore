@@ -166,7 +166,6 @@ compose.yaml
 Dockerfile
 README.md
 template.yaml
-.git
 .eslintignore
 .eslintrc.js
 .prettierignore
