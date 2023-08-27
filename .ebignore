@@ -170,4 +170,6 @@ template.yaml
 tsconfig.json
 package.json
 package-lock.json
+public
 !.output/server/node_modules
+!.output/public
