@@ -30,6 +30,6 @@ jobs:
             - name: Build production
               run: npm run build
             - name: Initialize AWS Elastic Beanstalk
-              run: eb init --platform node.js --region ${{ secrets.AWS_DEFAULT_REGION }} ${{secrets.APPLICATION_NAME}}}
+              run: eb init --platform node.js --region ${{ secrets.AWS_DEFAULT_REGION }} ${{secrets.APPLICATION_NAME}}
             - name: Deploy to AWS Elastic Beanstalk
               run: eb deploy ${{secrets.ENVIRONMENT_NAME}}
