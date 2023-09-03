@@ -157,6 +157,7 @@ plugins
 .dockerignore
 .eslintignore
 .eslintrc.js
+.github
 .npmrc
 .prettierignore
 .prettierrc.js
