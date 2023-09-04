@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    app: {
+        head: {
+            title: "LOCALHOST",
+        },
+    },
     runtimeConfig: {
         public: {
             CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
